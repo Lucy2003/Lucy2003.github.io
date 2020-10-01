@@ -1,6 +1,6 @@
 ---
 title: MyLibrary
-description: 一个自制函数库
+description: 一个自制函数库(持续更新)
 mainpage: false
 show_downloads: false
 project: "https://github.com/lucy2003/MyLibrary"
