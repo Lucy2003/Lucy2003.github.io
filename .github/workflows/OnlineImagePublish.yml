@@ -57,6 +57,9 @@ jobs:
        run: |
            gulp -f ./.github/gulpimages.js
      - name: 5.Publish
+       env:
+         GH_REF: github.com/lucy2003/lucy2003.github.io.git # GitHub 仓库 SSH 地址
+         GH_TOKEN: ${{ secrets.Access_Token }}
        run: |
           cp -rf ./images/* ../public-dir
           cd ../public-dir
