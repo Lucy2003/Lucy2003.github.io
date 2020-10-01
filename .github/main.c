@@ -6,6 +6,9 @@
 #include <time.h>
 
 #define MAX_PATH_LEN (256)
+#ifdef _linux
+#define stricmp strcasecmp
+#endif
 
 static long trave_dir(char* path,char* parentPath,int prefixlen) {
     DIR *d = NULL;
@@ -41,7 +44,7 @@ static long trave_dir(char* path,char* parentPath,int prefixlen) {
         if((!strncmp(dp->d_name, ".", 1)) || (!strncmp(dp->d_name, "..", 2)))
             continue;
 
-        snprintf(p, sizeof(p) - 1, "%s/%s", path, dp->d_name);
+        sprintf(p, "%s/%s", path, dp->d_name);
         stat(p, &st);
 		char* dt = ctime(&st.st_mtime);
 		dt[strlen(dt)-1]=0;
@@ -70,7 +73,7 @@ static long trave_dir(char* path,char* parentPath,int prefixlen) {
     }
     closedir(d);
 	//Print Footer
-	fprintf(fout,"\t\t{}\n\t],\n\t\"itemcount\":%i\n}",itemcount);
+	fprintf(fout,"\t\t{}\n\t],\n\t\"itemcount\":%ld\n}",itemcount);
 	
 	fflush(fout);
 	fclose(fout);
