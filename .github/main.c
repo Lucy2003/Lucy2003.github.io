@@ -44,7 +44,7 @@ static long trave_dir(char *path, char *parentPath, int prefixlen)
 	// Print Header
 	fprintf(fout, "{\n");
 	fprintf(fout, "\t\"parentPath\":\"%s/\",\n", parentPath + prefixlen);
-	fprintf(fout, "\t\"updateTime\":\"%s\",\n",tmp)
+	fprintf(fout, "\t\"updateTime\":\"%s\",\n",tmp);
 	fprintf(fout, "\t\"list\":[\n");
 
 	while ((dp = readdir(d)) != NULL)
