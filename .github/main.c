@@ -6,7 +6,7 @@
 #include <time.h>
 
 #define MAX_PATH_LEN (256)
-#ifdef _linux
+#ifdef _Linux
 #define stricmp strcasecmp
 #endif
 
