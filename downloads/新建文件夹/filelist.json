@@ -4,9 +4,10 @@
 		{
 			"name":"HelloWorld.txt",
 			"path":"/新建文件夹/HelloWorld.txt",
-			"time":"Thu Oct  1 11:53:26 2020",
+			"time":"Thu Oct  1 13:39:12 2020",
+			"size":0,
 			"type":"File"
-		},
+			},
 		{}
 	],
 	"itemcount":1
