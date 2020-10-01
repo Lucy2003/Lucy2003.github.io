@@ -9,6 +9,7 @@ on:
   push:
     paths: 
       - 'downloads/**'
+      - '.github/**'
 
 jobs:
   # This workflow contains a single job called "build"
