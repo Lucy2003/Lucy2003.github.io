@@ -8,7 +8,6 @@ on:
   push:
     branches:
       - web
-      - source 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -18,7 +17,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: 1-2.Check and Clone Dest Repo
+      - name: Do it!
         env:
           GH_REF: github.com/lucy2003/lucy2003.github.io.git # GitHub 仓库 SSH 地址
           GH_TOKEN: ${{ secrets.Access_Token }}
