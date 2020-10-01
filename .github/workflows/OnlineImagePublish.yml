@@ -62,8 +62,10 @@ jobs:
          GH_REF: github.com/lucy2003/lucy2003.github.io.git # GitHub 仓库 SSH 地址
          GH_TOKEN: ${{ secrets.Access_Token }}
        run: |
-          cp -rf ./images ../public-dir
+          rm -rf ../public-dir/images
+          mv -f ./images ../public-dir
           cd ../public-dir
+          rm -rf ./.github
           git add -A
           git commit -m "Online Update at `date +"%Y-%m-%d %H:%M:%S"`"
           git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master

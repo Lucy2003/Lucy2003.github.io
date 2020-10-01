@@ -36,9 +36,15 @@ static long trave_dir(char *path, char *parentPath, int prefixlen)
 		printf("Open filelist error:%s\n", filelistPath);
 		return -1;
 	}
+	
+	time_t t = time(0); 
+    char tmp[64]; //Time
+    strftime(tmp, sizeof(tmp), "%Y/%m/%d %X %A %z",localtime(&t)); 
+	
 	// Print Header
 	fprintf(fout, "{\n");
 	fprintf(fout, "\t\"parentPath\":\"%s/\",\n", parentPath + prefixlen);
+	fprintf(fout, "\t\"updateTime\":\"%s\",\n",tmp)
 	fprintf(fout, "\t\"list\":[\n");
 
 	while ((dp = readdir(d)) != NULL)
@@ -49,8 +55,8 @@ static long trave_dir(char *path, char *parentPath, int prefixlen)
 
 		snprintf(p, MAX_PATH_LEN, "%s/%s", path, dp->d_name);
 		stat(p, &st);
-		char *dt = ctime(&st.st_mtime);
-		dt[strlen(dt) - 1] = 0;
+
+		
 		if (!S_ISDIR(st.st_mode))
 		{ // File
 			// printf("%s\n", p);
@@ -61,11 +67,10 @@ static long trave_dir(char *path, char *parentPath, int prefixlen)
 					"\t\t{\n\t\t\t"
 					"\"name\":\"%s\",\n\t\t\t"
 					"\"path\":\"%s\",\n\t\t\t"
-					"\"time\":\"%s\",\n\t\t\t"
 					"\"size\":%ld,\n\t\t\t"
 					"\"type\":\"File\"\n\t\t\t"
 					"},\n",
-					dp->d_name, p + prefixlen, dt,st.st_size);
+					dp->d_name, p + prefixlen, st.st_size);
 		}
 		else
 		{ // Dir
@@ -74,9 +79,8 @@ static long trave_dir(char *path, char *parentPath, int prefixlen)
 					"\t\t{\n\t\t\t"
 					"\"name\":\"%s\",\n\t\t\t"
 					"\"path\":\"%s\",\n\t\t\t"
-					"\"time\":\"%s\",\n\t\t\t"
 					"\"type\":\"Dir\"\n\t\t},\n",
-					dp->d_name, p + prefixlen, dt);
+					dp->d_name, p + prefixlen);
 			long ret = trave_dir(p, path, prefixlen);
 			if (ret == -1)
 			{

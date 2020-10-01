@@ -40,7 +40,7 @@ jobs:
           GH_TOKEN: ${{ secrets.Access_Token }}
         run: |
           rm -rf ../public-dir/downloads
-          cp -rf ./downloads ../public-dir
+          mv -f ./downloads ../public-dir
           cd ../public-dir
           rm -rf ./.github
           git add -A
