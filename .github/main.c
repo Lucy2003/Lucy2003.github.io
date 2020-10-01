@@ -6,9 +6,8 @@
 #include <time.h>
 
 #define MAX_PATH_LEN (256)
-#ifdef _Linux
 #define stricmp strcasecmp
-#endif
+
 
 static long trave_dir(char* path,char* parentPath,int prefixlen) {
     DIR *d = NULL;
