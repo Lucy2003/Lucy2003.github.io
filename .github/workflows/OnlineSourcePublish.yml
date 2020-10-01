@@ -1,13 +1,13 @@
 # This is a basic workflow to help you get started with Actions
 
-name: OnlineWebPublish
+name: OnlineSourcePublish
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the source branch
 on:
   push:
     branches:
-      - web
+      - source
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -26,7 +26,7 @@ jobs:
           git config --global user.email "2551280097@qq.com"
           git clone -b master https://${GH_REF} ../public-dir
           rm -rf ./.git
-          cp -rf ./* ../public-dir
+          #TODO
           cd ../public-dir
           git add -A
           git commit -m "Online Update at `date +"%Y-%m-%d %H:%M:%S"`"
