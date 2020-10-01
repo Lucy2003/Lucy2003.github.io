@@ -3,7 +3,7 @@
   <entry>
     <title>Arduino 单片机开发之入坑</title>
     <url>/blog/articles/Arduino/Arduino_0/</url>
-    <content><![CDATA[<a class="fancybox" data-fancybox="gallery"  href="arduino.jpg" data-caption="Arduino" style="display:contents"><img src="https://cdn.jsdelivr.net/gh/lucy2003/lucy2003.github.io@master/blog/images/loading.gif" data-original="arduino.jpg" alt="Arduino"></a><span class="caption">Arduino</span>
+    <content><![CDATA[<a class="fancybox" data-fancybox="gallery"  href="Arduino0.jpg" data-caption="Arduino" style="display:contents"><img src="https://cdn.jsdelivr.net/gh/lucy2003/lucy2003.github.io@master/blog/images/loading.gif" data-original="Arduino0.jpg" alt="Arduino"></a><span class="caption">Arduino</span>
 
 <h3 id="简介与开发环境"><a href="#简介与开发环境" class="headerlink" title="简介与开发环境"></a>简介与开发环境</h3><p>首先，Arduino是一种单片机开发板，其MCU大部分基于AVR架构，采用串口下载，板载USB转串口芯片，下载时可自动复位，无需手动重置；开发板大多支持7 ~ 12 V DC 供电以及5V USB供电。</p>
 <p>要开发它，首先要安装Arduino的IDE<a id="more"></a> (或者安装atmel公司提供的开发环境)，接着安装开发板USB转串口芯片的驱动程序,然后在Arduino IDE中的工具-开发板选择你的开发板型号(我这里用的是基于Atmega328P的Uno)，就可以愉快地coding了！</p>
