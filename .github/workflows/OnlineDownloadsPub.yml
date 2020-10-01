@@ -35,6 +35,9 @@ jobs:
           gcc ./.github/main.c -O2 -o ./MakeFileList
           ./MakeFileList ./downloads
       - name: 3.Publish
+        env:
+          GH_REF: github.com/lucy2003/lucy2003.github.io.git # GitHub 仓库 SSH 地址
+          GH_TOKEN: ${{ secrets.Access_Token }}
         run: |
           rm -rf ../public-dir/downloads
           cp -rf ./downloads ../public-dir
