@@ -14,7 +14,7 @@ mainpage: true
 <!--projects-->
 ### Lucy2003的项目
 
-#### [MyLibrary - 一个自己写的函数库](https://lucy2003.github.io/MyLibrary)
+#### [MyLibrary - 一个自己写的函数库,未完成](https://lucy2003.github.io/MyLibrary)
 
 
 本页面于 2020.3.20 更新
