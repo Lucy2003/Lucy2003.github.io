@@ -31,7 +31,7 @@ jobs:
           rm -rf ./.git
       - name: 2. Compile program and process dir
         run: |
-          gcc ./github/main.c -O2 -o ./MakeFileList
+          gcc ./.github/main.c -O2 -o ./MakeFileList
           ./MakeFileList ./downloads
       - name: 3.Publish
         run: |
