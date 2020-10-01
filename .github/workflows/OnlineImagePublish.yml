@@ -1,0 +1,67 @@
+# This is a basic workflow to help you get started with Actions
+
+name: OnlineImagePublish
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the source branch
+on:
+  push:
+    paths:
+      - 'images/**'
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+     - uses: actions/checkout@v2
+     - name: 1.Clone Public
+       env:
+         GH_REF: github.com/lucy2003/lucy2003.github.io.git # GitHub 仓库 SSH 地址
+         GH_TOKEN: ${{ secrets.Access_Token }}
+       run: |
+          git config --global user.name "Lucy2003"
+          git config --global user.email "2551280097@qq.com"
+          git clone -b master https://${GH_REF} ../public-dir
+          rm -rf ./.git
+     - name: 2-1. Setup-Node
+       uses: actions/setup-node@v1
+       with: 
+        node-version: '10.x'
+     - name: 2-2. Cache node modules
+       id: cacheNodeModules
+       uses: actions/cache@v2
+       env:
+        cache-name: cache-node-modules
+       with:
+        # npm cache files are stored in `~/.npm` on Linux/macOS
+        path: |
+          ~/.npm
+          ./node_modules
+        key: ${{ runner.os }}-image-gulp-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}-
+        restore-keys: |
+          ${{ runner.os }}-image-gulp-${{ env.cache-name }}-
+     - name: 3-1. Install  Gulp
+       run: |
+        npm install gulp --save -g
+     - name: 3-2. Install Dependencies
+       if: steps.cacheNodeModules.outputs.cache-hit != 'true'
+       run: |
+        npm install gulp-imagemin --save
+     - name: 3-3. Finish Node Install
+       run: |
+          npm install
+     - name: 4.Process Images
+       run: |
+           gulp -f ./.github/gulpimages.js
+     - name: 5.Publish
+       run: |
+          cp -rf ./images/* ../public-dir
+          cd ../public-dir
+          git add -A
+          git commit -m "Online Update at `date +"%Y-%m-%d %H:%M:%S"`"
+          git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
+          
+          
