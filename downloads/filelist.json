@@ -1,0 +1,25 @@
+{
+	"parentPath":"/",
+	"list":[
+		{
+			"name":"Readme.txt",
+			"path":"/Readme.txt",
+			"time":"Thu Oct  1 08:28:45 2020",
+			"type":"File"
+		},
+		{
+			"name":"HelloWorld",
+			"path":"/HelloWorld",
+			"time":"Thu Oct  1 08:28:45 2020",
+			"type":"Dir"
+		},
+		{
+			"name":"新建文件夹",
+			"path":"/新建文件夹",
+			"time":"Thu Oct  1 08:28:45 2020",
+			"type":"Dir"
+		},
+		{}
+	],
+	"itemcount":3
+}
