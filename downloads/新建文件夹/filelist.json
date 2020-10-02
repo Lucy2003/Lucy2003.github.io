@@ -1,6 +1,6 @@
 {
 	"parentPath":"/",
-	"updateTime":"2020/10/01 14:49:57 Thursday +0000",
+	"updateTime":"2020/10/02 11:20:52 Friday +0000",
 	"list":[
 		{
 			"name":"HelloWorld.txt",
@@ -8,7 +8,12 @@
 			"size":0,
 			"type":"File"
 			},
+		{
+			"name":"新建文件夹",
+			"path":"/新建文件夹/新建文件夹",
+			"type":"Dir"
+		},
 		{}
 	],
-	"itemcount":1
+	"itemcount":2
 }

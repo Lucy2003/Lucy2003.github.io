@@ -1,0 +1,20 @@
+{
+	"parentPath":"/新建文件夹/",
+	"updateTime":"2020/10/02 11:20:52 Friday +0000",
+	"list":[
+		{
+			"name":"新建 RTF 文档.rtf",
+			"path":"/新建文件夹/新建文件夹/新建 RTF 文档.rtf",
+			"size":7,
+			"type":"File"
+			},
+		{
+			"name":"新建文本文档.txt",
+			"path":"/新建文件夹/新建文件夹/新建文本文档.txt",
+			"size":0,
+			"type":"File"
+			},
+		{}
+	],
+	"itemcount":2
+}
