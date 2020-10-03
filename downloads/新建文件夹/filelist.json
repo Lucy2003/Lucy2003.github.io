@@ -1,11 +1,17 @@
 {
 	"parentPath":"/",
-	"updateTime":"2020/10/02 11:20:52 Friday +0000",
+	"updateTime":"2020/10/03 03:18:37 Saturday +0000",
 	"list":[
+		{
+			"name":"Readme.md",
+			"path":"/新建文件夹/Readme.md",
+			"size":16,
+			"type":"File"
+			},
 		{
 			"name":"HelloWorld.txt",
 			"path":"/新建文件夹/HelloWorld.txt",
-			"size":0,
+			"size":13,
 			"type":"File"
 			},
 		{
@@ -15,5 +21,5 @@
 		},
 		{}
 	],
-	"itemcount":2
+	"itemcount":3
 }
