@@ -1,11 +1,17 @@
 {
 	"parentPath":"/",
-	"updateTime":"2020/10/03 03:18:37 Saturday +0000",
+	"updateTime":"2020/10/03 04:26:01 Saturday +0000",
 	"list":[
 		{
 			"name":"Readme.md",
 			"path":"/新建文件夹/Readme.md",
 			"size":16,
+			"type":"File"
+			},
+		{
+			"name":"MinGW-gcc5.1.0-tdm-1.exe",
+			"path":"/新建文件夹/MinGW-gcc5.1.0-tdm-1.exe",
+			"size":25148192,
 			"type":"File"
 			},
 		{
@@ -21,5 +27,5 @@
 		},
 		{}
 	],
-	"itemcount":3
+	"itemcount":4
 }
