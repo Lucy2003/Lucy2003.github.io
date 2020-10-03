@@ -1,7 +1,2 @@
 node_modules/*
-*.sh
-*.log
-*.exe
-*.bat
-*.dll
-*.crt
+
