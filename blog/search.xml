@@ -172,6 +172,30 @@
       </tags>
   </entry>
   <entry>
+    <title>树莓派 入坑</title>
+    <url>/blog/articles/RasPi/RasPI_Setup/</url>
+    <content><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>树莓派，一个信用卡大小的开发板。可以在其上运行 ARM Linux。<br>他将 CPU 的部分引脚引出，做成了40 Pin的接口(包括电源和接地)</p>
+<p>本文记录我的入坑及踩坑经历。</p>
+<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><p>树莓派主要以TF卡作为主存储器，因此受到TF卡速率限制。<br>当然，也可以从网络或者USB存储器启动，这里暂时不作讨论。</p>
+<p>要启动树莓派，咱需要:<br>1.树莓派一个(最好有散热片和风扇)<br>2.至少是A1级别的TF卡一张，容量最少8GB(别用低速卡，谁用谁知道)<br>3.读卡器一个<br>4.网线一根(有WIFI也凑活)<br>5.5V 3A电源一个</p>
+<p>注意，这里我不用显示器，用SSH连接并配置树莓派！</p>
+<h3 id="准备系统"><a href="#准备系统" class="headerlink" title="准备系统"></a>准备系统</h3><p>下载 Win32DiskImager，安装(这里提供下载，原地址)</p>
+<p>从树莓派官网的Downloads那里找到第三方系统 Ubuntu Server。<br>下载对应板子的系统(其实都是一样的)，32位或64位都行。</p>
+<p>注意，64位系统需要经过可能损坏系统的配置才能运行32位的程序！</p>
+<p>下载完了解压，得到IMG镜像文件一个。</p>
+<p>打开Win32DiskImager,选择镜像文件路径，插上读卡器和内存卡，选择盘符，然后点击【写入】;</p>
+<p>写入成功后关闭软件，打开读卡器的盘符，编辑user-data,随意删掉顶头几行#打头的注释，然后保存;<br>(上面的目的是让Ubuntu加载其中的配置，使SSH能够通过密码登陆，我前几次没这样干，结果总要Public Key)</p>
+<p>然后弹出读卡器，拔出TF卡，插到树莓派的TF卡槽，插电开机。</p>
+<h3 id="SSH连接"><a href="#SSH连接" class="headerlink" title="SSH连接"></a>SSH连接</h3>]]></content>
+      <categories>
+        <category>树莓派</category>
+      </categories>
+      <tags>
+        <tag>树莓派</tag>
+        <tag>UbuntuServer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>树莓派NTP服务器搭建</title>
     <url>/blog/articles/RasPi/RasPi_NTP_SERVER/</url>
     <content><![CDATA[<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ul>
